@@ -1,0 +1,12 @@
+resources:
+- nginx.yml
+#- https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.0/deploy/static/provider/cloud/deploy.yaml
+images:
+- name: k8s.gcr.io/ingress-nginx/controller
+  newName: mcr.microsoft.com/oss/kubernetes/ingress/nginx-ingress-controller
+  newTag: v1.2.0
+- name: k8s.gcr.io/ingress-nginx/kube-webhook-certgen
+  newName: mcr.microsoft.com/oss/kubernetes/ingress/kube-webhook-certgen
+  newTag: v1.2.0
+namespace: not-secured
+
